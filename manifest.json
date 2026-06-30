@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Auto Follow",
+  "version": "1.0.0",
+  "description": "Automatically follow users on a GitHub following/followers list, then continue page by page.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://github.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "GitHub Auto Follow"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

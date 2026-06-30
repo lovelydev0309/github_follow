@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      :root { color-scheme: light dark; }
+      body {
+        width: 260px;
+        margin: 0;
+        padding: 14px 16px;
+        font: 13px/1.4 -apple-system, Segoe UI, Roboto, sans-serif;
+      }
+      h1 { font-size: 14px; margin: 0 0 10px; }
+      .status {
+        padding: 6px 10px;
+        border-radius: 6px;
+        background: #eee;
+        margin-bottom: 12px;
+        font-weight: 600;
+      }
+      .status.running { background: #d4f7d4; color: #11662b; }
+      .status.stopped { background: #f3f4f6; color: #555; }
+      .count { font-weight: 400; color: #666; }
+      .row { display: flex; gap: 8px; margin-bottom: 8px; }
+      button {
+        flex: 1;
+        padding: 8px 0;
+        border: 0;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      #start { background: #2da44e; color: #fff; }
+      #stop  { background: #cf222e; color: #fff; }
+      #reset { background: #eaeef2; color: #24292f; font-weight: 500; }
+      .hint { color: #888; font-size: 11px; margin-top: 8px; }
+      @media (prefers-color-scheme: dark) {
+        .status.stopped { background:#22272e; color:#adbac7; }
+        .status.running { background:#1b3a23; color:#7ee787; }
+        #reset { background:#2d333b; color:#adbac7; }
+        .count, .hint { color:#768390; }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>GitHub Auto Follow</h1>
+    <div id="status" class="status stopped">Stopped</div>
+    <div class="row">
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+    </div>
+    <div class="row">
+      <button id="reset">Reset counter</button>
+    </div>
+    <div class="hint">
+      Open a profile's <b>?tab=following</b> page, then press Start.
+      It follows everyone on the page and advances automatically.
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
